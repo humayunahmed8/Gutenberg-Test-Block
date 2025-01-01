@@ -28,3 +28,7 @@ node_modules/
 
 # dotenv environment variables file
 .env
+.vscode
+.DS_Store
+.idea
+build

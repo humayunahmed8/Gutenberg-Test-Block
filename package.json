@@ -1,10 +1,27 @@
 {
-	"name": "test-block",
+	"name": "gutenberg-blocks",
 	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
+	"description": "An addon for Gutenberg plugin.",
+	"author": "Humayun Ahmed",
 	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
+	"main": "build/blocks/index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/navidabdi/gutenberg-blocks.git"
+	},
+	"keywords": [
+		"wordpress",
+		"gutenberg",
+		"blocks",
+		"gutenberg blocks development",
+		"wordpress gutenberg blocks development",
+		"wordpress gutenberg blocks",
+		"wordpress gutenberg blocks development boilerplate"
+	],
+	"prettier": "@wordpress/prettier-config",
+	"stylelint": {
+		"extends": "@wordpress/stylelint-config/scss"
+	},
 	"scripts": {
 		"build": "wp-scripts build",
 		"format": "wp-scripts format",
@@ -15,9 +32,16 @@
 		"start": "wp-scripts start"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^30.7.0"
+		"@wordpress/eslint-plugin": "^14.0.0",
+		"@wordpress/prettier-config": "^2.10.0",
+		"@wordpress/scripts": "^25.4.0",
+		"@wordpress/stylelint-config": "^21.10.0",
+		"eslint-config-prettier": "^8.6.0"
 	},
 	"dependencies": {
-		"wp-scripts": "^0.0.1-security"
+		"@wordpress/block-editor": "^11.4.0",
+		"@wordpress/components": "^23.4.0",
+		"@wordpress/i18n": "^4.27.0",
+		"nvm": "^0.0.4"
 	}
 }
