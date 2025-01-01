@@ -7,7 +7,7 @@
 	"main": "build/blocks/index.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/navidabdi/gutenberg-blocks.git"
+		"url": "https://github.com/humayunahmed8/Gutenberg-Test-Block.git"
 	},
 	"keywords": [
 		"wordpress",

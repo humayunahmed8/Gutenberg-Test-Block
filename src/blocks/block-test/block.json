@@ -1,9 +1,9 @@
 {
 	"apiVersion": 2,
-	"name": "naviddev-gutenberg-blocks/test",
+	"name": "dev-gutenberg-blocks/test",
 	"version": "0.1.0",
 	"title": "test Block",
-	"category": "naviddev-gutenberg-blocks",
+	"category": "dev-gutenberg-blocks",
 	"icon": "calendar-alt",
 	"description": "Example block written with ESNext standard and JSX support build step required.",
 	"supports": {
@@ -20,7 +20,7 @@
 			"default": "#00ff00"
 		}
 	},
-	"textdomain": "naviddev-gutenberg-blocks",
+	"textdomain": "dev-gutenberg-blocks",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css"

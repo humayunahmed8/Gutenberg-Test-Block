@@ -1,6 +1,6 @@
 <?php
 
-namespace Naviddev\GutenbergBlocks;
+namespace Humayun\GutenbergBlocks;
 
 class Plugin {
 	/**
@@ -8,7 +8,7 @@ class Plugin {
 	 *
 	 * @var string
 	 */
-	const PREFIX = 'naviddev-gutenberg-blocks';
+	const PREFIX = 'dev-gutenberg-blocks';
 
 	/**
 	 * Gettext localization domain.
@@ -31,8 +31,7 @@ class Plugin {
 		// blocks category
 		if (version_compare($GLOBALS['wp_version'], '5.7', '<')) {
 			add_filter('block_categories', __CLASS__ . '::gutenbergBlocksRegisterCategory', 10, 2);
-		}
-		else {
+		} else {
 			add_filter('block_categories_all', __CLASS__ . '::gutenbergBlocksRegisterCategory', 10, 2);
 		}
 	}
@@ -53,8 +52,8 @@ class Plugin {
 	public static function gutenbergBlocksRegisterCategory($categories, $post): array {
 		return [
 			[
-				'slug'  => 'naviddev-gutenberg-blocks',
-				'title' => __('NavidDev Gutenberg Blocks', Plugin::L10N),
+				'slug'  => 'dev-gutenberg-blocks',
+				'title' => __('Gutenberg Blocks', Plugin::L10N),
 			],
 			...$categories,
 		];
