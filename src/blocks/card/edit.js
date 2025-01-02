@@ -1,15 +1,13 @@
-// import { registerBlockType } from '@wordpress/blocks';
-import { RichText, MediaUpload, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, ColorPalette, TextControl, Button } from '@wordpress/components';
-
-// editor style
+import { RichText, MediaUpload, InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, ColorPalette, TextControl, Button, RangeControl } from '@wordpress/components';
 import './editor.scss';
-
-// colors
 import colors from '../../utilities/colors-palette';
 
+
 export default function Edit({ attributes, setAttributes }) {
-	const { title, body, imageUrl, imageAlt, buttonText, buttonUrl, color } = attributes;
+	const blockProps = useBlockProps();
+	const { title, body, imageUrl, imageAlt, buttonText, buttonUrl, color,
+		fontSizeMobile, fontSizeTablet, fontSizeDesktop } = attributes;
 	return (
 		<>
 			<InspectorControls>
@@ -27,14 +25,34 @@ export default function Edit({ attributes, setAttributes }) {
 					<ColorPalette
 						colors={colors}
 						value={color}
-						onChange={(newColor) =>
-							setAttributes({ color: newColor })
-						}
+						onChange={(newColor) => setAttributes({ color: newColor })}
+					/>
+
+					<RangeControl
+						label="Font Size Mobile"
+						value={fontSizeMobile}
+						onChange={(value) => setAttributes({ fontSizeMobile: value })}
+						min={12}
+						max={50}
+					/>
+					<RangeControl
+						label="Font Size Tablet"
+						value={fontSizeTablet}
+						onChange={(value) => setAttributes({ fontSizeTablet: value })}
+						min={12}
+						max={50}
+					/>
+					<RangeControl
+						label="Font Size Desktop"
+						value={fontSizeDesktop}
+						onChange={(value) => setAttributes({ fontSizeDesktop: value })}
+						min={12}
+						max={50}
 					/>
 				</PanelBody>
 			</InspectorControls>
 
-			<div className="wp-block-custom-card">
+			<div {...blockProps} className="wp-block-custom-card">
 				<MediaUpload
 					onSelect={(media) => {
 						setAttributes({
@@ -62,7 +80,13 @@ export default function Edit({ attributes, setAttributes }) {
 				<RichText
 					tagName="h2"
 					value={title}
-					style={{ color }}
+					style={{
+						color,
+						fontSize: `${fontSizeDesktop}px`,
+						'--mobile-font': `${fontSizeMobile}px`,
+						'--tablet-font': `${fontSizeTablet}px`,
+						'--desktop-font': `${fontSizeDesktop}px`
+					}}
 					onChange={(value) => setAttributes({ title: value })}
 					placeholder="Card Title"
 				/>

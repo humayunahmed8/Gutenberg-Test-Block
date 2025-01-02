@@ -1,7 +1,7 @@
 import { useBlockProps } from '@wordpress/block-editor';
 
 export default function save({ attributes }) {
-	const { title, body, imageUrl, imageAlt, buttonText, buttonUrl, color } = attributes;
+	const { title, body, imageUrl, imageAlt, buttonText, buttonUrl, color, fontSizeMobile, fontSizeTablet, fontSizeDesktop } = attributes;
 	const blockProps = useBlockProps.save(); // Get block props for save context
 
 	return (
@@ -11,7 +11,11 @@ export default function save({ attributes }) {
 					<img src={imageUrl} alt={imageAlt} />
 				</div>
 			)}
-			{title && <h2 style={{ color }}>{title}</h2>}
+			{title && <h2 style={{
+				color, '--mobile-font': `${fontSizeMobile}px`,
+				'--tablet-font': `${fontSizeTablet}px`,
+				'--desktop-font': `${fontSizeDesktop}px`
+			}}>{title}</h2>}
 			{body && <p>{body}</p>}
 			{buttonText && buttonUrl && (
 				<div className="card-button">

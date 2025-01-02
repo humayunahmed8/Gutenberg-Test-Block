@@ -26,6 +26,18 @@
     color: #333;
 }
 
+.wp-block-custom-card h2 {
+    @media (max-width: 768px) {
+        font-size: var(--mobile-font) !important;
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+        font-size: var(--tablet-font) !important;
+    }
+    @media (min-width: 1025px) {
+        font-size: var(--desktop-font) !important;
+    }
+}
+
 .wp-block-custom-card p {
     padding: 0 20px 16px;
     margin: 0;

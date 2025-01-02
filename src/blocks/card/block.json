@@ -39,7 +39,19 @@
 		"buttonUrl": {
 			"type": "string",
 			"default": "#"
-		}
+		},
+		"fontSizeMobile": {
+            "type": "number",
+            "default": 16
+        },
+        "fontSizeTablet": {
+            "type": "number",
+            "default": 20
+        },
+        "fontSizeDesktop": {
+            "type": "number",
+            "default": 24
+        }
 	},
 	"textdomain": "dev-gutenberg-blocks",
 	"editorScript": "file:./index.js",
