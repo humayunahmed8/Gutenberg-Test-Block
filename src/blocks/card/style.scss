@@ -1,0 +1,64 @@
+/*
+* Style Works for both Editor and Frontend
+*/
+
+/* card-block/style.css */
+.wp-block-custom-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: #fff;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.wp-block-custom-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.wp-block-custom-card h2 {
+    padding: 16px 20px;
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.wp-block-custom-card p {
+    padding: 0 20px 16px;
+    margin: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.wp-block-custom-card .card-button {
+    padding: 0 20px 20px;
+}
+
+.wp-block-custom-card .card-button a {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #007cba;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.wp-block-custom-card .card-button a:hover {
+    background: #006ba1;
+}
+
+/* Editor Styles */
+.wp-block-custom-card .card-image-container {
+    position: relative;
+    background: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.wp-block-custom-card .card-image-container img {
+    cursor: pointer;
+}

@@ -39,7 +39,8 @@ class Plugin {
 	public static function getBlocksName(): array {
 		return [
 			'bootstrap',
-			'block-test'
+			'block-test',
+			'card',
 		];
 	}
 
